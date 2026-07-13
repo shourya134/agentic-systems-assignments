@@ -15,7 +15,7 @@ def build_chain():
         ChatOllama: An instance of ChatOllama configured with the provided prompt template.
     """
     # Create an instance of ChatOllama with the given prompt template
-    llm = ChatOllama(model="qwen2.5-coder:7b",base_url="http://localhost:11434", temperature=1)
+    llm = ChatOllama(model="qwen2.5-coder:7b",base_url="http://localhost:11434", temperature=1, num_predict=500)
     prompt = ChatPromptTemplate.from_messages([
         ("system",
          """you are a helpful assistant that instructs users on best coding practices for beginners."""),
@@ -35,4 +35,4 @@ results = chain.invoke(
 
 
 
-print(results)
+#print("\n" + results)
